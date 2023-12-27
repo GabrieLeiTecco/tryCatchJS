@@ -1,0 +1,23 @@
+<script>
+function nomeGritando() {
+    try {
+        const obj = {nome: ''}
+        nome = prompt('Digite o seu nome: ')
+        obj.nome = nome
+        const resultado = nome => nome /= null ? console.log(obj.nome.toUpperCase() + '!!!') : 'Precisa de um nome'
+        console.log(resultado(nome))
+    } catch (e) {
+        erro(e)
+    }
+}
+
+function erro(error) {
+    throw {
+        nome: error.name,
+        msg: error.message,
+        date: new Date
+    }
+}
+
+nomeGritando()
+</script>
